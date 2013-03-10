@@ -1,0 +1,175 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+
+/* Include all the styles from the reindeer theme */
+@include reindeer;
+  
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin registration-theme {
+	.registration-text-field {
+		border: 1px solid #ccc;
+		background-image: none;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+		-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+		transition: border linear 0.2s, box-shadow linear 0.2s;
+	}
+	.v-textfield-invalid {
+		border: 2px solid #b74100;
+		background-color: #ffecc6;
+	}
+	.v-app input.registration-text-field.v-widget {
+		height: 28px;
+	}
+	.registration-field-label {
+		text-shadow: 1px 1px #fefefe;
+		color: #666;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		padding-right: 10px;
+	}
+	.registration-form-layout .v-gridlayout-spacing-on {
+		padding-bottom: 5px;
+	}
+	.registration-form-wrapper {
+		border: 2px solid #fff;
+		background: #f5f5f5;
+		background: -moz-radial-gradient(center, ellipse cover, #1e5799 0%, white 0%, #f3f3f3 50%, #e5e5e5 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1e5799), color-stop(0%, white), color-stop(50%, #f3f3f3), color-stop(100%, #e5e5e5));
+		background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%, white 0%, #f3f3f3 50%, #e5e5e5 100%);
+		background: -o-radial-gradient(center, ellipse cover, #1e5799 0%, white 0%, #f3f3f3 50%, #e5e5e5 100%);
+		background: -ms-radial-gradient(center, ellipse cover, #1e5799 0%, white 0%, #f3f3f3 50%, #e5e5e5 100%);
+		background: radial-gradient(center, ellipse cover, #1e5799 0%, white 0%, #f3f3f3 50%, #e5e5e5 100%);
+		border-radius: 8px;
+		-moz-box-shadow: 0 0 5px #ddd;
+		-webkit-box-shadow: 0 0 5px #ddd;
+		box-shadow: 0 0 5px #ddd;
+	}
+	.registration-form-layout {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #fff;
+	}
+	.v-caption .v-required-field-indicator {
+		display: none;
+	}
+	.registration-title-layout {
+		border-bottom: 1px solid #ddd;
+	}
+	.registration-button-layout {
+		border-top: 1px solid #fff;
+	}
+	.registration-register-button, 
+	.registration-register-button:active, 
+	.registration-register-button:focus {
+		background-image: none;
+		height: 36px;
+	}
+	.registration-register-button:active .v-button-wrap,
+	.registration-register-button:focus .v-button-wrap,
+	.registration-register-button:hover .v-button-wrap {
+		outline: none;
+		background-image: none;
+	}
+	.registration-register-button .v-button-wrap {
+		cursor: pointer;
+		outline: none;
+		-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
+		box-shadow:inset 0px 1px 0px 0px #a4e271;
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809) );
+		background:-moz-linear-gradient( center top, #89c403 5%, #77a809 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809');
+		background-image: none;
+		background-color:#89c403;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		border-radius:6px;
+		border:1px solid #74b807;
+		display:inline-block;
+		color:#ffffff;
+		font-size:15px;
+		font-weight:normal;
+		padding:6px 24px;
+		text-decoration:none;
+	}
+	.registration-register-button .v-button-wrap:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403) );
+		background:-moz-linear-gradient( center top, #77a809 5%, #89c403 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403');
+		background-color:#77a809;
+	}
+	.registration-register-button .v-button-wrap:active {
+		position:relative;
+		top:1px;
+	}
+	.registration-register-button .v-button-caption {
+		color: #fff;
+		text-shadow:1px 1px 0px #528009;
+	}
+	.registration-checkbox {
+		text-shadow: 1px 1px #fefefe;
+		color: #444;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+	}
+	.registration-checkbox label {
+		padding-left: 5px;
+	}
+	.registration-title-layout {
+		color: #444;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-shadow: 1px 1px #fefefe;
+		font-size: 18px;
+		padding-bottom: 8px;
+	}
+	.v-label-registration-title-layout {
+		border-bottom: 0px;
+	}
+	.registration-footer-layout {
+		text-shadow: 1px 1px #fefefe;
+		color: #666;
+	}
+	.registration-footer-layout a {
+		text-decoration: none;
+		color: #0088cc;
+	}
+	.registration-header-layout {
+		background-color: #a6bcd8;
+		border-radius: 4px 4px 4px 4px;
+		padding: 8px 15px 8px 40px;
+		border: 2px solid #9aaece;
+		overflow: visible;
+		-moz-box-shadow: 0 0 5px #ddd;
+		-webkit-box-shadow: 0 0 5px #ddd;
+		box-shadow: 0 0 5px #ddd;
+	}
+	.registration-header-layout .v-label {
+		color: #FFFFCC;
+		font-size: 18px;
+		font-weight: bold;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-shadow: 1px 1px #9aaece;
+		position: relative;
+		left: -8px;
+		top: 3px;
+	}
+	.registration-signup-img {
+		float: left;
+		position: relative;
+		left: -25px;
+		top: -20px;
+	}
+	.registration-description-layout .v-label {
+		margin-top: -7px;
+		text-shadow: 1px 1px #fefefe;
+		color: #666;
+	}
+}

@@ -1,0 +1,5 @@
+@import "registration-theme.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in registration-theme.scss */
+@include registration-theme;
