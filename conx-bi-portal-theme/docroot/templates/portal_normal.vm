@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+#parse ($init)
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+<head>
+	<title>$the_title - $company_name</title>
+	$theme.include($top_head_include)
+	<!-- Google Web Font: Droid Sans -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body class="$css_class">
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+<div id="action-bar">
+	<div id="action-bar-wrapper">
+		<div id="logo-region">
+			<div id="logo-link"></div>
+		</div>
+		<div id="nav-region">
+			#if ($has_navigation || $is_signed_in)
+				#parse ("$full_templates_path/navigation.vm")
+			#end
+		</div>
+		<div id="session-region">
+			#if (!$is_signed_in)
+				<a href="$sign_in_url" class="sign-in-button" rel="nofollow">$sign_in_text</a>
+			#else
+				<a href="$sign_out_url" class="sign-out-button" rel="nofollow">Sign Out</a>
+				<div id="user-session-panel">
+					<a href="#" id="session-stuff" rel="nofollow">$user_first_name $user_last_name</a>
+				</div>
+				<div id="user-avatar">&nbsp;</div>
+			#end
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+	<!--
+	<header id="banner" role="banner">
+
+		#if (!$is_signed_in)
+			<a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
+		#end
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+	-->
+	
+	<div id="content">
+		<!--
+		<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>
+		-->
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+			$portletDisplay.setTitle($the_title)
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+</div>
+
+<footer id="footer" role="contentinfo">
+	<p class="powered-by">
+		Business Convergence LLC &copy; 2013. #language("All Rights Reserved.")
+	</p>
+</footer>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>
