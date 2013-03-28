@@ -19,7 +19,7 @@
 			conf="default->default" />
 		
 		<!-- MVP for Vaadin -->
-		<dependency org="org.pakhama" name="org.pakhama.vaadin.mvp" rev="0.0.1" conf="default->master,javadoc" />
+		<dependency org="org.pakhama" name="org.pakhama.vaadin.mvp" rev="0.0.1-SNAPSHOT" conf="default->master,javadoc" />
 
 		<!-- Vaadin themes -->
 		<dependency org="com.vaadin" name="vaadin-themes" rev="&vaadin.version;" />
